@@ -1,0 +1,18 @@
+
+
+greets = {"hey", "Hey", "how you doing?", "How you doing?"}
+
+Greet = {"Hello","hello", " Hello ", "Hello, Newman"}
+
+Greeting = input("Greeting: ")
+
+if Greeting in Greet:
+    print(f"$0 ",end="")
+
+elif Greeting in greets:
+    print(f"$20 ", end="")
+
+else:
+   #greets or Greet != Greeting
+   print(f"$100 ", end="")
+print()
