@@ -1,0 +1,118 @@
+.grid {
+    display: grid;
+    transition: 300ms;
+    grid-template-columns: var(--left, 48px) auto;
+  }
+  
+  .grid:has(.left:hover) {
+    --left: 30%;
+  }
+
+
+html {
+    margin: 0;
+    background-image: url("floral1.jpg");
+}
+  
+  #grid {
+    height: 100vh;
+    transition: 500ms;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    background: transparent;
+  }
+  
+  :where(.left, .center, .right) {
+    background: transparent;
+    transition: 300ms;
+  }
+  
+  :where(.left, .center, .right):hover {
+    background: transparent;
+  }
+  
+  #grid:has(.left:hover) {
+    grid-template-columns: 2fr 0.5fr 0.5fr;
+  }
+  
+  #grid:has(.center:hover) {
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+  }
+  #grid:has(.right:hover) {
+    grid-template-columns: 0.5fr 0.5fr 2fr;
+  }
+
+
+
+  
+  .Gedepic {
+    background-image: url('/static/Gedepic.jpg');
+    background-size: cover;
+    background-position: left;
+    height: 15vh;
+    width: 15vw;
+    opacity: 1;
+    overflow: hidden;
+    scale: 2;
+  }
+  
+  @keyframes kenny {
+    100% {
+      opacity: 0;
+      scale: 1;
+    }
+  }
+
+
+  
+  .stage {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+  }
+  
+  .actor {
+    animation: kenburns 30s linear infinite;
+    background-size: cover;
+    background-position: 50%;
+    height: 100vh;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    scale: 1.2;
+    width: 100vw;
+  }
+  
+  .actor:nth-child(1) {
+    background-image: url("");
+  }
+  .actor:nth-child(2) {
+    animation-delay: 10s;
+    background-image: url("");
+  }
+  .actor:nth-child(3) {
+    animation-delay: 20s;
+    background-image: url("");
+  }
+  
+  @keyframes kenburns {
+    25% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: .8;
+      scale: 1;
+    }
+  
+    60% {
+      opacity: 0;
+    }
+  }
+
+  .calendar{
+    background-color: blueviolet;
+  }
+}
