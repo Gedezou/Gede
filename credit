@@ -1,0 +1,78 @@
+#include <cs50.h>
+#include <stdio.h>
+
+
+void print_credit_card_type(long long cardnumber);
+bool checksum(long long cardnumber);
+int find_length(long long n);
+bool check_valid(long long card_cardNO);
+
+int main(void)
+{
+    // TODO prompt for input
+    long long card_cardNO;
+    do
+    {
+    card_cardNO  = get_long_long("cardNO: ");
+    }
+    while
+    (card_cardNO < 0);
+
+    if (check_valid(card_cardNO))
+        print_credit_card_type(card_cardNO);
+    else
+        printf("INVALID\n");
+
+}
+
+
+
+
+// TODO calculate check sum
+bool checksum(long long cardnumber)
+{
+    int sum = 0;
+    for (int i = 0; cardnumber != 0; i++,cardnumber /= 10)
+    {
+        if (i % 2 == 0)
+        sum += cardnumber % 10;
+        else
+        {
+            int digit = 2 * (cardnumber % 10);
+            sum += digit / 10 +digit % 10;
+        }
+    }
+
+    return (sum % 10) == 0;
+}
+
+void print_credit_card_type(long long cardnumber)
+{
+    if ((cardnumber >= 34e13 && cardnumber < 35e13) || (cardnumber >= 37e13 && cardnumber < 38e13))
+        printf("AMEX\n");
+        else if (cardnumber >= 51e14 && cardnumber <56e14)
+        printf("MASTERCARD\n");
+    else if ((cardnumber <= 4e12 && cardnumber < 5e12) || (cardnumber >= 4e15 && cardnumber < 5e15))
+        printf("VISA\n");
+    else
+        printf("INVALID\n");
+}
+
+
+//TODO check for card length and starting digits
+bool check_valid(long long card_cardNO)
+{
+    int len = find_length(card_cardNO);
+    return (len == 13 || len == 15 || len == 16) && checksum(card_cardNO);
+}
+
+int find_length(long long n)
+{
+    int len;
+    for  (len = 0; n != 0; n /= 10)
+    len++;
+    return len;
+}
+
+
+// TODO print AMEX, MASTERCARD, VISA, or INVALID
