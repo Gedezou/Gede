@@ -1,8 +1,19 @@
-import { registerRootComponent } from 'expo';
+const express = require('express');
+const app = express();
+const port = 3000;
 
-import App from '../beautydrop-frontend/App';
+app.get('/', (req, res) => {
+  res.send('Everything you need!');
+});
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});
+app.get('/about', (req, res) => {
+  res.send('About Page');
+});
+
+app.get('/contact', (req, res) => {
+  res.send('Contact Page');
+});
+require('dotenv').config();
