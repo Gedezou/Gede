@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"name": "website",
+			"path": "../website"
+		},
+		{
+			"name": "HelloWorld",
+			"path": "../HelloWorld"
+		},
+		{
+			"name": "flask",
+			"path": "../flask"
+		},
+		{
+			"name": "Newapp",
+			"path": "../Newapp"
+		},
+		{
+			"name": "flaskapp",
+			"path": "../flaskapp"
+		},
+		{
+			"name": "newplay",
+			"path": "."
+		},
+		{
+			"name": "website",
+			"path": "../../Downloads/FinalProject-main/website"
+		},
+		{
+			"name": "FinalProject-main",
+			"path": "../../Downloads/FinalProject-main"
+		},
+		{
+			"path": "../BeautyDrop"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Newapp",
+		"powershell.cwd": "c:\\Users\\Moon\\Desktop\\flask"
+	}
+}
